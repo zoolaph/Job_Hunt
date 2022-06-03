@@ -24,25 +24,11 @@ class Livre {
           body: connection);
       if (res.statusCode == 200) {
         Navigator.pushNamed(context, '/liste');
-      } else {
-        Navigator.pushNamed(context, '/');
-      }
+      } 
     } catch (err) {
       return Future.error(err);
     }
   }
 
-  static ajout(BuildContext context, title, body) async {
-    try {
-      Map<String, dynamic> data = {"title": title, "body": body};
-      var res = await http.post(Uri.parse(baseUrl + '/posts'), body: data);
-      if (res.statusCode == 201) {
-        Navigator.pushNamed(context, '/liste', arguments: res.body);
-      } else {
-        Navigator.pushNamed(context, '/');
-      }
-    } catch (err) {
-      return Future.error(err);
-    }
-  }
+ 
 }
