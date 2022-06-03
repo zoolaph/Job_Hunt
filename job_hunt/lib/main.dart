@@ -36,6 +36,10 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+       routes: {
+        '/liste': (context) => SplashScreen(),
+      },
     );
+   
   }
 }
